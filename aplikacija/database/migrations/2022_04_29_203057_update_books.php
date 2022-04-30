@@ -13,7 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('books', function (Blueprint $table) {
+            $table->foreignId('writer_id')->constrained();
+            $table->foreignId('genre_id')->constrained();
+        });
     }
 
     /**
@@ -23,6 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('books', function (Blueprint $table) {
+            $table->removeColumn('genre_id');
+            $table->removeColumn('writer_id');
+        });
     }
 };
