@@ -19,16 +19,6 @@ class WriterController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -50,17 +40,6 @@ class WriterController extends Controller
     public function show(Writer $writer)
     {
         return response()->json($writer,200);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Writer  $writer
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Writer $writer)
-    {
-        //
     }
 
     /**
