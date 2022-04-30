@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WriterController;
+use App\Http\Controllers\GenreController;
+use App\Http\Controllers\API\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +21,9 @@ Route::apiResources([
     'writers'=>WriterController::class,
     'genres'=>GenreController::class
 ]);
+
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
 
 /*
 
