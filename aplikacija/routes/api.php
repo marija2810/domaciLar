@@ -14,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::apiResources([
+    'writers'=>WriterController::class,
+    'genres'=>GenreController::class
+]);
+
+/*
+
+GET  /api/writers - vrati sve pisce iz baze (json format) - index iz WriterController - a
+GET /api/writers/{id} - vrati pisca sa zadatim id - jem - show metoda
+POST /api/writers - kreiraj pisca na osnovu tela zahteva - store
+PUT/PATCH /api/writers/{id} - izmeni pisca sa datim id -jem podacima koji se nalaze u telu zahteva - update
+DELETE /api/writers/{id} obrisi pisca sa zadatim id - jem - destroy
+ */

@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [WebController::class, 'all']);
+Route::get('/book/{id}', [WebController::class, 'one']);
+Route::post('/book/{id}', [WebController::class, 'update']);
