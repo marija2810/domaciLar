@@ -70,6 +70,6 @@ class WriterController extends Controller
     public function destroy(Writer $writer)
     {
         $writer->delete();
-        return response()->json('ok',200);
+        return response()->json('Obrisano!',200);
     }
 }

@@ -39,6 +39,7 @@ class GenreController extends Controller
         $input=$request->all();
         $genre= Genre::create($input);
         return response()->json($genre,200);
+
     }
 
     /**
@@ -89,6 +90,6 @@ class GenreController extends Controller
     public function destroy(Genre $genre)
     {
         $genre->delete();
-        return response()->json('ok',200);
+        return response()->json('Obrisano!',200);
     }
 }
