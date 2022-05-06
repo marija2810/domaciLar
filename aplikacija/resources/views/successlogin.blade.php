@@ -25,7 +25,7 @@
      <a href="{{ url('/main/logout') }}">
                     <button class=" btn form-control btn-secondary mb-2">Izloguj se</button>
                 </a>
-     <a href="{{ url('/main/logout') }}">
+     <a href="{{ url('/') }}">
                     <button class=" btn form-control btn-secondary mb-2">Idi na Spisak knjiga</button>
                 </a>
     </div>
