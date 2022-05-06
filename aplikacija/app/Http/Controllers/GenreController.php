@@ -29,7 +29,7 @@ class GenreController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+      *Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -91,5 +91,18 @@ class GenreController extends Controller
     {
         $genre->delete();
         return response()->json('Obrisano!',200);
+    }
+
+
+    /**
+     * nije resource ruta
+     * Search for a value
+     *
+     * @param  str  $value
+     * @return \Illuminate\Http\Response
+     */
+    public function search(string $value)
+    {
+        return response()->json(Genre::where('value','like', '%'.$value.'%')->get(),200);
     }
 }

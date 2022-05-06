@@ -20,6 +20,9 @@
             <div class='col-12'>
                 <h1 class='text-center text-white bg-blue'>Spisak knjiga</h1>
             </div>
+            <a href="{{ url('/main/logout') }}">
+                    <button class=" btn form-control btn-secondary mb-2">Izloguj se</button>
+                </a>
         </div>
         @foreach($chunks as $chunk)
         <div class="row mt-5 d-flex justify-content-center">

@@ -7,7 +7,7 @@ use App\Models\Writer;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
-{
+{ 
     public function all(){
         $books=Book::all();
         $response=[];
@@ -48,6 +48,6 @@ class WebController extends Controller
             $book->save();
         }
         return redirect('/');
-    }
+    } 
 }
 
