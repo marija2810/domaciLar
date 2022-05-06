@@ -17,14 +17,27 @@ use App\Http\Controllers\API\AuthController;
 |
 */
 
+//javni 
 Route::apiResources([
     'writers'=>WriterController::class,
     'genres'=>GenreController::class
 ]);
 
+Route::get('/genres/search/{value}', [GenreController::class, 'search']);
+
+////////////////////////////////////////////////////////////////////////////////////
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
+
+
+//zasticeni 
+
+Route::group(['middleware' => ['auth:sanctum']], function () {
+   // Route::post('/genre',[GenreController::class, 'store']);
+
+   Route::post('/logout', [AuthController::class, 'logout']);
+});
 /*
 
 GET  /api/writers - vrati sve pisce iz baze (json format) - index iz WriterController - a
@@ -32,4 +45,5 @@ GET /api/writers/{id} - vrati pisca sa zadatim id - jem - show metoda
 POST /api/writers - kreiraj pisca na osnovu tela zahteva - store
 PUT/PATCH /api/writers/{id} - izmeni pisca sa datim id -jem podacima koji se nalaze u telu zahteva - update
 DELETE /api/writers/{id} obrisi pisca sa zadatim id - jem - destroy
+GET /api/genres/{value} pretrazi prema vrednostima npr Zanr (nadje ubacene nove values)
  */
