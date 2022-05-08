@@ -57,6 +57,10 @@ class WriterController extends Controller
         if(isset($request->last_name)){
             $writer->last_name=$request->last_name;
         }
+
+        $writer->first_name='Marija';
+        $writer->last_name='Djokic';
+        
         $writer->save();
         return response()->json($writer,200);
     }

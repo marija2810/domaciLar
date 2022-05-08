@@ -77,6 +77,7 @@ class GenreController extends Controller
             $genre->value=$request->value;
         }
        
+        $genre->value='Izmenjena vrednost';
         $genre->save();
         return response()->json($genre,200);
     }
